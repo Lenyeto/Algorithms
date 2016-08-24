@@ -1,0 +1,120 @@
+8/24/2016
+	Data Structures - Review
+		+ Arrays
+		+ Linked-List
+			- Single/Double
+		+ Graphs
+			- Nodes/Edges
+			- Directed/Undirected
+			Representing Graphs In Code
+				- Adjacency List
+				- Adjacency Matrix
+				List = [(A, B), (B, C)]
+				
+				Adjacency Matrix		O(1) to check connections
+					A	B	C
+				A	1	1	0
+				B	0	1	1
+				C	0	0	1
+				
+				Traversing a Graph
+					Walk
+						Any Route
+					Path
+						A Route With No Repeating Nodes
+					Trail
+						A Route With Out Repeating Edges
+					Cycle
+						A Path That Ends And Begins On The Same Node
+					Circuit
+						A Trail That Ends And Begins On The Same Node
+		+ Tree
+			- A Graph Without Cycles
+			Pre Order
+					O      Balanced (Differs By One On Either Side)
+				   / \
+				  O   O
+				 / \ /
+				O  O O
+				
+				-As You Encounter Them
+				
+				BFS : Local Order
+					Searches The First Level First, Then The Second Level.
+				
+				EX:
+					1, 2, 3, 4, 5
+						1
+						 \
+						  2
+						   \
+						    3
+							 \
+							  4
+							   \
+							    5
+								
+				EX:
+							Tree			Level
+						2^0 = 1		O		0
+						    	   / \		
+						2^1 = 2   O   O     1
+								 / \ / \
+						2^2 = 4 O  O O  O 	2
+						
+						Height Of Just The Root Is 0
+						
+						Number Of Nodes = |N|
+						Height = floor(lg(|N|))
+						
+						
+	Algorithmic Problem Solving (Cornom)
+		- Understand The Problem
+		- Decide On:
+			Computational Means
+			Exact/Approximate Solution?
+			Data Structure
+				How Long It Takes / How Much Memory It Uses
+			Design Technique
+		- Design The Algorithm
+		- Prove Correctness
+		- Analyze The Algorithm
+		- Code It
+		Problem Types
+			Sort
+				* Best Worst Case is O(nlgn)
+			Searching
+			String Processing
+			************Graph Problems
+			Geometric Problems
+			Numerical Problems
+		Asymptotic Notation
+			Worst Case
+				Guarenteed It Will Do No Worse Than O()
+				https://en.wikipedia.org/wiki/Big_O_notation
+				See Onenote
+			
+		
+	Compare Orders Of Growth
+		Use Limits
+			L'Hopitals Rule
+		Stirling's Formula
+			n! (aprox) = rad(2 * pi * n) (n / e)^n
+	
+	Analysis Of Non-Recursive Algorithm
+		1) Find What Determins The Input Size
+		2) Identify The Algorithm's Basic Operation
+			(Usually In The Inner-Most Loop)
+		3) Check If The Basic Operation Depends Only On The Size Of The Input
+		4) Set Up Summation To Represent The Number Of Times The Basic Operation Is Executed
+		5) Develop A Closed-Form Solution Or Order Of Growth
+		
+HW 8/24/2016
+	Lab 1 On Site
+	Use The Def Of Big O or L'Hopitals Rule
+		
+8/29/2016
+	Notes
+
+8/31/2016
+	Notes
