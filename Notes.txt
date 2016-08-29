@@ -114,7 +114,13 @@ HW 8/24/2016
 	Use The Def Of Big O or L'Hopitals Rule
 		
 8/29/2016
-	Notes
+	example
+		//Array A and Size n
+		FindMax(A, n):
+			int max=0,
+			for (i = 0; i < n; ++i):
+				if (A[i] > max) max = A[i];
+			return max;
 
 8/31/2016
 	Notes
