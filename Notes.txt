@@ -117,10 +117,81 @@ HW 8/24/2016
 	example
 		//Array A and Size n
 		FindMax(A, n):
-			int max=0,
+			int max=0;
 			for (i = 0; i < n; ++i):
 				if (A[i] > max) max = A[i];
 			return max;
 
 8/31/2016
-	Notes
+	void insertionSort(int *a, int n) {
+		for (int i = 1; i < Size; ++i) {
+			int v = a[i];
+			int j = i-1;
+			while (i >= 0 && a[i] > v) {
+				a[j+i] = a[j];
+				j--;
+			}
+			a[i+1] = v;
+		}
+	}
+	proof
+		First, construct the loop invariant
+			a condition that holds after each iteration of the loop
+		Prove for:
+			Initialiization - prior to the first iteration
+			Maintanence - After the iteration
+			Termination - After the loop terminates
+			
+	Stack
+	DFS (Node n)
+		DFS(n -> left)
+		DFS(n -> right)
+		
+	DigitCount(n)
+		if (n==0) return 1;
+		if (n==1) return 1;
+		return DigitCount(n / 2) + 1;
+		
+		
+	A(0) = 0;
+	A(1) = 1;
+	A(n) = A(n/2) + 1;
+		A(n/2) = A(n/2/2) + 1 = A(n/4) + 1;
+			A(n/4) = A(n/4/2) + 1 = A(n/8) + 1;
+		A(n/2) = A(n/8) + 1 + 1;
+	A(n) = A(n/8) + 1 + 1 + 1 = A(n/8) + 3;
+	A(n) = A(n/(2^i)) + i;
+	A(n) = A(n/(2^(log 2 n))) + log 2 n = lg(n)
+	lg(n) <= c lg(n)
+	in O(lg(n))
+	
+	iter (int a, int n)
+		if (n == 0) return 1
+		if (n==1) return a
+		for (i = 1; i < n; ++i) {
+			a *= a;
+		}
+		return 1;
+		
+	rec(a, n)
+		if (n == 0) return 1
+		if (n == 1) return a
+		return rec(a, n/2) * rec(a, n/2);
+		#could be return (rec(a, n/2))**2
+	m(0) = 0
+	m(1) = 0
+	m(n) = m(n/2) + 1
+	in O(lg(n))
+	rec (a, n)
+		if (n==0) retrun 1;
+		if (n == 1) return a;
+		if (n %2)
+			return (rec(a,(n-1)/2)**2) * A
+		else
+			return (rec(a,n/2)**2)
+			
+	HINT
+		Calls itself recurive
+			divides by a number
+			almost always has a log
+			ex : T(n) = T(n/b)
