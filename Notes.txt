@@ -195,3 +195,20 @@ HW 8/24/2016
 			divides by a number
 			almost always has a log
 			ex : T(n) = T(n/b)
+
+9/21/2016
+	Minimal Spanning Tree
+		Find spanning tree that minimize the sum of edges
+				^(Includes all nodes from graph)
+		Prim's Algorithm
+			-Greedy Algorithm
+		Kruskal's Algorithm
+			-Greedy
+			-Must Detect if new edge will create a cycle
+		Cycle Detection
+			Use DFS/BFS
+			1. Select a random node
+			2. Preform DFS/BFS from node
+			3. If the current node has been visited before then there is a cycle.
+		
+		
