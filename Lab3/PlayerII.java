@@ -5,7 +5,5 @@
 
 @FunctionalInterface
 public interface PlayerII {
-	public void makeMove(GameBoard gameBoard) {
-		System.out.println("TEST");
-	}
+	public void makeMove(GameBoard gameBoard);
 }

@@ -16,7 +16,7 @@ public class TicTacToe {
 		this.playerOne = playerOne;
 	}
 	
-	public void setPlayerTwo(PlayerI playerTwo) {
+	public void setPlayerTwo(PlayerII playerTwo) {
 		this.playerTwo = playerTwo;
 	}
 	
@@ -47,11 +47,13 @@ public class TicTacToe {
 							   	   GameBoard.X_VALUE));
 		});
 		
-		// same as player one
 		game.setPlayerTwo((gameBoard) -> {
-			while (!gameBoard.mark((int)Math.floor(Math.random() * 3),
-								   (int)Math.floor(Math.random() * 3),
-							   	   GameBoard.O_VALUE));
+			//while (!gameBoard.mark((int)Math.floor(Math.random() * 3),
+			//					   (int)Math.floor(Math.random() * 3),
+			//				   	   GameBoard.O_VALUE));
+			
+			
+			
 		});
 		
 		game.play();
