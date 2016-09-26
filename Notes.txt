@@ -212,3 +212,61 @@ HW 8/24/2016
 			3. If the current node has been visited before then there is a cycle.
 		
 		
+9/26/2016
+	Lab4
+		Using JSON
+		Build a graph for each palace
+	How to execute the jar in python
+		import subprocess
+		line_coordinates = ''
+		for y in range(0, 500, 6):
+			line_coordinates += '0 '+ str(y) + ' 500 ' + str(y) + ' '
+		subprocess.run('java -jar MapViewer.jar ' + line_coordinates)
+		
+	How to parse a JSON file in python
+		import json
+		hyrule_json = open('hyrule.json')
+		hyrule_data = json.load(hyrule_json)
+		hyrule_json.close()
+		
+		for (k in hyrule_data):
+			for v in hyrule_data[k]:
+				x, y = hyrule_data[k][v]
+				
+	OtherStuff
+		def add_edge(graph, from_vertex, to_vertex):
+			if from_vertex not in graph.keys():
+				graph[from_vertex] = []
+			if to_vertex not in graph.keys():
+				graph[to_vertex] = []
+			if to_vertex not in graph[from_vertex]:
+				graph[from_vertex].append(to_vertex)
+			if from_vertex not in graph[to_vertex]:
+				graph[to_vertex].append(from_vertex)
+
+		def dfs(graph, current_vertex=None, parent_vertex=None, visited=[], cycle=False):
+			if current_vertex == None:
+				current_vertex = list(graph.keys())[0]
+			visted.append(current_vertex)
+			print(visited
+			
+			for child in graph[current_vertex]:
+				if child not in visited:
+					cycle = dfs(graph, child, current_vertex, visited, cycle)
+				elif child != parent_vertex:
+					cycle = True
+					
+			return cycle
+			
+		graph = {}
+		
+
+		add_edge(graph, 'A', 'B')
+		add_edge(graph, 'B', 'C')
+		add_edge(graph, 'C', 'D')
+		
+		print(graph)
+		
+	Checking for loops
+		3 groups, Stack (next children to check), Current (the current one we are checking, needs to include parent),
+			visited, which ones weve been to
