@@ -270,3 +270,41 @@ HW 8/24/2016
 	Checking for loops
 		3 groups, Stack (next children to check), Current (the current one we are checking, needs to include parent),
 			visited, which ones weve been to
+			
+10/3/2016
+	Dynamic Programming
+		Store and resuse computed results
+		Memoization
+		Recursive approach is typically top down
+		DP Table(For Warshall/Floyd, this is the adj. matrix)
+			Solve using bottom up approach
+				 10   10   10
+				A -> B -> C -> D
+				|--------------^
+					50
+					
+				A = 0, B = 1, C = 2, D = 3
+				Horizontal is j
+				Vertical is i
+		
+				k = -1 & 0					k = 1						k = 2
+					A	B	C	D				A	B	C	D				A	B	C	D
+				A	0	10	INF	50			A			20	50			A				30
+				B	10	0	10	INF			B							B
+				C	INF	10	0	10			C							C	
+				D	50	INF	10	0			D							D
+		
+				D(0, 3, 0) = min(D(0, 3, -1), D(0, 0, -1) + D(0, 3, -1))
+				min (50, 0 + 50) = 50
+			
+				
+	Warshall's Algorithm
+		Transitive colosure of a graph
+		k=The number of nodes we can pass through to go from u to v
+		k=-1, can't pass through any other node, must be a direct edge
+		k=0, we can pass through the first node
+		k=1, we can pass through the first 2 nodes.
+		D(i, j, k) = D(i, j, k-1)|D(i, k, k-1)&D(k, j, k-1)
+	Dijkstra Recurrence Relation
+		D(i, j, k) = min(D(i, j, k-1), D(i, k, k-1) + D(j, k, k-1))
+		O(3^n)
