@@ -308,3 +308,34 @@ HW 8/24/2016
 	Dijkstra Recurrence Relation
 		D(i, j, k) = min(D(i, j, k-1), D(i, k, k-1) + D(j, k, k-1))
 		O(3^n)
+		
+10/10/2016
+	Floyd-Worshal
+		Implementation
+	Knapsack
+		Knapsack has a maximum weight, w
+		maximize value of items in the bag
+		
+	2 problems
+		research how we'd solve them before wednesday
+		Job Scheduling Problem
+			Look it up
+
+
+10/12/2016
+	Dynamic Programming
+		1. Characterize the structure of an optimal solution
+		2. Define a recurrence relation, relating the optimal solution to the optimal solutions of its subproblems
+		3. Build the solutions to the subproblems bottom-up
+		4. Use solutions to subproblems to build solution to the main problem
+		L = line
+		S = amount of time at a stage
+		d = amount of time to move to the next stage on the same line
+					0S0		0S1		0S2		0S3
+		L = 0		0-0d0->	1-0d1->	2-0d2->	3
+					0t0		
+					(to 1^1)
+					1S0		1S1		1S2		1S3
+		L = 1		0-1d0->	1-1d1->	2-1d2->	3
+		(IVE GIVEN UP WRITING THE REST DOWN, TOO MANY ARROWS)
+		
